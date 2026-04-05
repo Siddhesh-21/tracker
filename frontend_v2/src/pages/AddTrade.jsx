@@ -2,7 +2,9 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createTrade } from "../api.js";
 import { Card, PageHeader, AccentBtn, GhostBtn, SectionLabel, Divider } from "../components/UI.jsx";
+import { useMemo } from "react";
 
+const autoPnl = useMemo(() => calcPnl(), [form.entry, form.exit, form.qty, form.direction]);
 export default function AddTrade() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -48,7 +50,7 @@ export default function AddTrade() {
     </div>
   );
 
-  const autoPnl = calcPnl();
+  
 
   return (
     <div style={{ padding: "48px 40px", maxWidth: 760 }}>
