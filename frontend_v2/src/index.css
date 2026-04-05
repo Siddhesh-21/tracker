@@ -1,0 +1,109 @@
+/* ── Fonts ─────────────────────────────────────────────── */
+/* Bebas Neue (display), Instrument Sans (body), DM Mono (numbers) */
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: var(--bg-base);
+  color: var(--fg-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Design tokens ─────────────────────────────────────── */
+:root {
+  /* Dark terminal palette */
+  --bg-base:      #0d0d0f;
+  --bg-surface:   #141417;
+  --bg-raised:    #1c1c21;
+  --bg-hover:     #22222a;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-mid:    rgba(255,255,255,0.11);
+  --border-strong: rgba(255,255,255,0.18);
+
+  --fg-primary:   #e8e8ec;
+  --fg-secondary: #9898a6;
+  --fg-muted:     #5a5a6a;
+
+  --accent:       #c8f135;   /* electric lime — the one pop of color */
+  --accent-dim:   rgba(200,241,53,0.12);
+  --accent-hover: #d4f55a;
+
+  --green:        #4ade80;
+  --green-bg:     rgba(74,222,128,0.1);
+  --red:          #f87171;
+  --red-bg:       rgba(248,113,113,0.1);
+  --amber:        #fbbf24;
+  --amber-bg:     rgba(251,191,36,0.1);
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.06);
+}
+
+/* ── Typography helpers ─────────────────────────────────── */
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; line-height: 1; }
+.mono    { font-family: 'DM Mono', monospace; }
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+
+/* ── Utility ────────────────────────────────────────────── */
+.green  { color: var(--green); }
+.red    { color: var(--red); }
+.amber  { color: var(--amber); }
+.muted  { color: var(--fg-secondary); }
+.label  {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.animate-fade-up { animation: fadeUp 0.4s ease both; }
+
+/* ── Input/select reset ─────────────────────────────────── */
+input, select, textarea {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  color: var(--fg-primary);
+  background: var(--bg-raised);
+  border: 0.5px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  padding: 10px 13px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+}
+input::placeholder, textarea::placeholder { color: var(--fg-muted); }
+select option { background: var(--bg-raised); }
+textarea { resize: vertical; line-height: 1.65; }
+
+/* ── Button base ────────────────────────────────────────── */
+button { cursor: pointer; font-family: 'Instrument Sans', sans-serif; }
