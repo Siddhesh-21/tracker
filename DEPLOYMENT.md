@@ -27,9 +27,9 @@ Cloudinary stores your chart and P&L screenshots.
 1. Go to **[cloudinary.com](https://cloudinary.com)** → Sign up for free
 2. After logging in, go to **Dashboard**
 3. Copy these three values — you'll need them later:
-   - `Cloud name`
-   - `API Key`
-   - `API Secret`
+   - `Cloud name` du1rtz5nd
+   - `API Key` 793798779615863
+   - `API Secret` z1hYL9ahGvvcMIIruifvyOON5-g
 
 ---
 
